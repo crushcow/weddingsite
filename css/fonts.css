@@ -1,0 +1,27 @@
+  @font-face {
+    font-family: "Mozart Script Thin";
+    font-style: normal;
+    font-weight: 250;
+    src: local("MozartScript-Thin"), local('MozartScript-Thin'), url("https://d3jpwrui3eswtl.cloudfront.net/mozartscript/MozartScript-Thin.ttf") format('truetype');
+  }
+
+  @font-face {
+    font-family: "Mozart Script";
+    font-style: normal;
+    font-weight: 250;
+    src: local("MozartScript-Thin"), local('MozartScript-Thin'), url("https://d3jpwrui3eswtl.cloudfront.net/mozartscript/MozartScript-Thin.ttf") format('truetype');
+  }
+  
+    @font-face {
+    font-family: "Didot LT Std Roman";
+    font-style: normal;
+    font-weight: 400;
+    src: local("DidotLTStd-Roman"), local('DidotLTStd-Roman'), url("https://d3jpwrui3eswtl.cloudfront.net/didotltstd/DidotLTStd-Roman-Regular.otf") format('opentype');
+  }
+
+  @font-face {
+    font-family: "Didot LT Std";
+    font-style: normal;
+    font-weight: 400;
+    src: local("DidotLTStd-Roman"), local('DidotLTStd-Roman'), url("https://d3jpwrui3eswtl.cloudfront.net/didotltstd/DidotLTStd-Roman-Regular.otf") format('opentype');
+  }

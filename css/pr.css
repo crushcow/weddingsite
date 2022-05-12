@@ -1,0 +1,71 @@
+body {
+    background-image: url("../images/game/paper.jpg");
+    background-position: top;
+    background-repeat: repeat;
+}
+
+.pr-row {
+    margin-top: 10%;
+    padding: 8px;
+}
+
+.pr-text {
+    font-family: 'Forum', cursive;
+}
+
+div#preload {
+    display: none;
+}
+
+.pr-container {
+    text-align: center;
+}
+
+.pr-list {
+    text-align: left;
+}
+
+.pr-button {
+    width: 100%;
+    font-size: 1.6rem;
+}
+
+.feedback {
+    font-weight: 600;
+}
+
+#feedbackCorrect {
+    color: green;
+}
+
+#feedbackIncorrect {
+    color: red;
+}
+
+.question {
+    display: none;
+}
+
+.end {
+    display: none;
+}
+
+.info {
+    display: none;
+}
+
+.pr-image {
+    border: 8px solid #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.pr-bottom-image {
+    position: fixed;
+    bottom: 0px;
+    height: 25%;
+    left: 50%;
+}
+
+img {
+    margin-bottom: 16px;
+}

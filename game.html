@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Janet & Luke</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/pr.css">
+
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
+</head>
+
+<body>
+
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <div class="container">
+        <div class="row pr-row">
+            <div class="three columns">
+                </br>
+            </div>
+            <div class="six columns pr-text pr-container">
+
+                <!-- Intro Elements –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+                <div class="intro">
+                    <img src="./images/game/logo.png" class="intro u-max-full-width animate__animated animate__bounceInDown" />
+                    <p class="animate__animated animate__fadeIn animate__delay-1s">The newlyweds have prepared a number of trials to determine which guest is the most worthy. In the locked safe holds a "valuable" prize. Clear all the trials and recieve the passcode to the safe!
+                    </p>
+
+                    <ul class="pr-list animate__animated animate__fadeIn animate__delay-1s">
+                        <li>You must complete your current trial to proceed.</li>
+                        <li>Feel free to collaborate.</li>
+                        <li>Be careful, only the first person that opens the safe wins.</li>
+                        <li>The trials will increase in difficulty as we move along.</li>
+                    </ul>
+
+                    <button class="button pr-button animate__animated animate__zoomIn animate__faster animate__delay-2s" onclick="start()">Start</button>
+
+                </div>
+
+
+
+
+
+                <!-- Question Elements –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+                <h3 class="question animate__animated animate__bounceInDown animate__faster" id="questionTitle">Question X</h3>
+                <p class="question animate__animated animate__zoomIn animate__delay-1s  animate__faster" id="questionText">Question</p>
+                <img src="." class="question pr-image u-max-full-width animate__animated animate__zoomIn animate__delay-1s animate__faster" id="questionImage" />
+                <br/>
+
+                <input class="question u-full-width  animate__animated animate__zoomIn animate__delay-1s animate__faster" placeholder="Enter answer here" type="text" id="answerInput">
+                <button class="button pr-button question animate__animated animate__zoomIn animate__delay-1s animate__faster" id="submitButton" onclick="answer()">Submit</button>
+
+
+                <h3 class="question feedback info animate__animated animate__pulse" id="feedbackCorrect">Correct</h3>
+                <h3 class="question feedback animate__animated animate__wobble animate__faster" id="feedbackIncorrect">Incorrect</h3>
+
+
+
+                <!-- Info Elements –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+                <p class="info animate__animated animate__zoomIn animate__faster" id="infoQuestion">Info Question</p>
+                <p class="info animate__animated animate__zoomIn animate__faster" id="infoText">Info Text</p>
+                <img src="." class="info pr-image u-max-full-width animate__animated animate__zoomIn animate__faster" id="infoImage" />
+                <br/>
+
+                <button class="button info pr-button animate__animated animate__zoomIn animate__delay-1s" id="nextButton" onclick="next()">Next</button>
+
+
+                <h4 class="end animate__animated animate__zoomIn">Congratulations, the code to the safe is: </h4>
+                <h3 class="end animate__animated animate__zoomIn" id="endCode">[X, X, X]</h3>
+                <h4 class="end animate__animated animate__zoomIn">See the Best Man to claim your prize!</h4>
+            </div>
+            <div class="three columns">
+                </br>
+            </div>
+        </div>
+    </div>
+
+	<script>
+		function start() {
+
+			if (localStorage.progress) {
+				currentQuestion = parseInt(localStorage.progress);
+			} else {
+				currentQuestion = 0;
+			}
+
+			var $target = $(".intro");
+			$target.fadeOut('slow').promise().done(function() {
+				showQuestion();
+			});
+		}
+
+		function showQuestion() {
+			$questionTitle.text('Trial ' + (currentQuestion + 1) + '/' + questions.length);
+			$questionTitle.show();
+
+			$questionText.text(questions[currentQuestion].question);
+			$questionText.show();
+
+			if (questions[currentQuestion].questionImage) {
+				$questionImage.attr('src', questions[currentQuestion].questionImage)
+				$questionImage.show();
+			}
+
+
+			$answerInput.val('');
+			$answerInput.show();
+
+			$submitButton.show();
+		}
+
+		function showEnd() {
+			$endCode.text(code);
+			var $target = $(".end");
+			$target.show();
+			localStorage.clear();
+		}
+		
+		const code = "LetTheLoveIn"
+		const questions_list = [
+			{
+				question: "How many years have Janet & Luke been together?",
+				answer: "6",
+				questionImage: "./images/game/years.jpg",
+				info: "6 years was how long Luke made Janet wait",
+				infoImage: "./images/game/years_i.jpg",
+			}, 
+			{
+				question: "Where did they travel to on their third date?",
+				answer: "Atlantic City",
+				questionImage: "./images/game/ac.jpg",
+				info: "After going to dinner and watching a movie, Luke and Janet decided to make a spontaneous trip down to AC",
+				infoImage: "./images/game/ac_i.jpg",
+			}, 
+			{
+				question: "What is Janet's favorite temperature?",
+				answer: "Lukewarm",
+				questionImage: "./images/game/warm.jpg",
+				info: "That real comfortable feeling after refreshingly cool and before soothingly hot",
+				infoImage: "./images/game/warm_i.jpg",
+			}, 
+			{
+				question: "Who was Janet's favorite Star wars character?",
+				answer: "Anakin",
+				questionImage: "./images/game/starwars.jpg",
+				info: "Janet really likes sand",
+				infoImage: "./images/game/starwars_i.jpg",
+			}, 
+			{
+				question: "What is their pet's name? (hint: previous question)",
+				answer: "Leia",
+				questionImage: "./images/game/pet.jpg",
+				info: "Leia is the goodest girl in the whole world",
+				infoImage: "./images/game/pet_i.jpg",
+			},
+			{
+				question: "Where did Luke propose to Janet?",
+				answer: "Hawaii",
+				questionImage: "./images/game/proposal.jpg",
+				info: "Fun factoid: Luke tried to propose at the beach at sunrise, but Janet got scared and ran away",
+				infoImage: "./images/game/proposal_i.jpg",
+			},
+		]
+	</script>
+	<script src="./js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-1.6.1.js"></script>
+
+
+
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div id="preload">
+        <img src="./images/game/years.jpg" />
+        <img src="./images/game/years_i.jpg" />
+
+        <img src="./images/game/pet.jpg" />
+        <img src="./images/game/pet_i.jpg" />
+
+        <img src="./images/game/ac.jpg" />
+        <img src="./images/game/ac_i.jpg" />
+
+        <img src="./images/game/warm.jpg" />
+        <img src="./images/game/warm_i.jpg" />
+
+        <img src="./images/game/proposal.jpg" />
+        <img src="./images/game/proposal_i.jpg" />
+
+        <img src="./images/game/starwars.jpg" />
+        <img src="./images/game/starwars_i.jpg" />
+
+        <img src="./images/game/starwars.jpg" />
+        <img src="./images/game/starwars_i.jpg" />
+
+        <img src="./images/game/starwars.jpg" />
+        <img src="./images/game/starwars_i.jpg" />
+
+        <img src="./images/game/starwars.jpg" />
+        <img src="./images/game/starwars_i.jpg" />
+
+        <img src="./images/game/starwars.jpg" />
+        <img src="./images/game/starwars_i.jpg" />
+
+
+    </div>
+
+    <!-- Preload Images
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+
+</html>
