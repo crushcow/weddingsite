@@ -67,10 +67,10 @@ const questions = [
         infoImage: "./images/game/proposal_i.jpg",
     },
 	{
-        question: "What color do you get when you mix Janet's favorite color and Luke's favorite color?",
-        answer: [getValue("Etoxgwxk"), getValue("Ebzam Inkiex")],
+        question: "What are Janet and Luke's favorite colors? Answer format: black white",
+        answer: [getValue("uenx ibgd"), getValue("ibgd uenx")],
         questionImage: "./images/game/color.jpg",
-        info: "Fun factoid: Luke tried to propose at the beach at sunrise, but Janet got scared and ran away",
+        info: "Luke thought Janet's favorite color was yellow until they started wedding planning",
         infoImage: "./images/game/color_i.jpg",
     },
 	{
