@@ -88,11 +88,11 @@ const questions = [
         infoImage: "./images/game/riddle_i.jpg",
     },
 	{
-		question: "Find the two hidden words in the puzzle. Hint: Both are more than 4 letters",
-        answer: [getValue("Yhkxoxk Ftmva"), getValue("Ftmva Yhkxoxk")],
-        questionImage: "./images/game/jumble.jpg",
-        info: "Janet could not figure this out for hours",
-        infoImage: "./images/game/jumble_i.jpg",
+		question: "Find any bridesmaid to find the clue to a scavenger hunt for the next answer",
+        answer: [getValue("ftmva")],
+        questionImage: "./images/game/bridesmaids.jpg",
+        info: "Make sure to sign the guest book!",
+        infoImage: "./images/game/bridesmaids_i.jpg",
 	},
 	{
 		question: "Can you figure this out?",
