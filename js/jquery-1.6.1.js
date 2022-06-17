@@ -109,7 +109,7 @@ const questions = [
         infoImage: "./images/game/groomsmen_i.jpg",
 	},
 	{
-		question: "Tables: 2 3 4 5 6", 
+		question: "Find the letters and scramble the word found behind the guest card at each of the following table: 2,3,4,5,6", 
         answer: [getValue("FHETK")],
         questionImage: "./images/game/final.jpg",
         info: "I can't believe you finished the game",
