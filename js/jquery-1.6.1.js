@@ -18,13 +18,6 @@ localStorage.clear();
 
 const questions = [
 	{
-        question: "Who was the artist for Janet and Luke's first dance?",
-        answer: ["Kane Brown"],
-        questionImage: "./images/game/dance.jpg",
-        info: "The first time Janet heard this song she thought this guy was a terrible singer.",
-        infoImage: "./images/game/dance_i.jpg",
-    }, 
-	{
         question: "How many years have Janet & Luke been together?",
         answer: ["6","six"],
         questionImage: "./images/game/years.jpg",
@@ -33,80 +26,94 @@ const questions = [
     }, 
 	{
         question: "Where did they travel to on their third date?",
-        answer: ["Atlantic City", "AC"],
+        answer: [getValue("Tmetgmbv Vbmr"), getValue("TV")],
         questionImage: "./images/game/ac.jpg",
         info: "After going to dinner and watching a movie, Luke and Janet decided to make a spontaneous trip down to AC",
         infoImage: "./images/game/ac_i.jpg",
     }, 
 	{
         question: "What is Janet's favorite temperature?",
-        answer: ["Lukewarm"],
+        answer: [getValue("Endxptkf")],
         questionImage: "./images/game/warm.jpg",
         info: "That real comfortable feeling after refreshingly cool and before soothingly hot. Cringing yet?",
         infoImage: "./images/game/warm_i.jpg",
     }, 
 	{
+		question: "Write in alphabetical order the first letters of the bride's wedding party excluding the bride. Follow this format: AAABC",
+        answer: [getValue("TTCFL")],
+        questionImage: "./images/game/order.jpg",
+        info: "BROOKLYNETTES",
+        infoImage: "./images/game/order_i.jpg",
+	},
+	{
         question: "Who was Janet's favorite Star wars character?",
-        answer: ["Anakin", "Anakin Skywalker"],
+        answer: [getValue("Tgtdbg"), getValue("Tgtdbg Ldrptedxk")],
         questionImage: "./images/game/starwars.jpg",
         info: "Janet really likes sand",
         infoImage: "./images/game/starwars_i.jpg",
     }, 
 	{
         question: "What is their pet's name? (hint: previous question)",
-        answer: ["Leia"],
+        answer: [getValue("Exbt")],
         questionImage: "./images/game/pet.jpg",
         info: "Leia is the goodest girl in the whole world",
         infoImage: "./images/game/pet_i.jpg",
     },
 	{
         question: "Where did Luke propose to Janet?",
-        answer: ["Hawaii"],
+        answer: [getValue("Atptbb")],
         questionImage: "./images/game/proposal.jpg",
         info: "Fun factoid: Luke tried to propose at the beach at sunrise, but Janet got scared and ran away",
         infoImage: "./images/game/proposal_i.jpg",
     },
 	{
         question: "What color do you get when you mix Janet's favorite color and Luke's favorite color?",
-        answer: ["Lavender", "Light Purple"],
-        questionImage: "./images/game/proposal.jpg",
+        answer: [getValue("Etoxgwxk"), getValue("Ebzam Inkiex")],
+        questionImage: "./images/game/color.jpg",
         info: "Fun factoid: Luke tried to propose at the beach at sunrise, but Janet got scared and ran away",
-        infoImage: "./images/game/proposal_i.jpg",
+        infoImage: "./images/game/color_i.jpg",
     },
+	{
+        question: "Who was the artist for Janet and Luke's first dance?",
+        answer: [getValue("Dtgx Ukhpg")],
+        questionImage: "./images/game/dance.jpg",
+        info: "The first time Janet heard this song she thought this guy was a terrible singer.",
+        infoImage: "./images/game/dance_i.jpg",
+    }, 
 	{
         question: "What can fill a room but takes up no space?",
-        answer: ["Love"],
-        questionImage: "./images/game/proposal.jpg",
-        info: "Fun factoid: Luke tried to propose at the beach at sunrise, but Janet got scared and ran away",
-        infoImage: "./images/game/proposal_i.jpg",
+        answer: [getValue("Ehox")],
+        questionImage: "./images/game/riddle.jpg",
+        info: "Luke is terrible at riddles, he still doesn't understand this. He thought it was the awkward elephant in the room.",
+        infoImage: "./images/game/riddle_i.jpg",
     },
 	{
-		question: "What are their zodiac signs?",
-        answer: ["Gemini and Capricorn", "Capricorn and Gemini", "Capricorn Gemini", "Gemini Capricorn"],
-        questionImage: "./images/game/proposal.jpg",
-        info: "Fun factoid: Luke tried to propose at the beach at sunrise, but Janet got scared and ran away",
-        infoImage: "./images/game/proposal_i.jpg",
-	},
-	{
 		question: "Find the two hidden words in the puzzle. Hint: Both are more than 4 letters",
-        answer: ["Forever Match", "Match Forever"],
+        answer: [getValue("Yhkxoxk Ftmva"), getValue("Ftmva Yhkxoxk")],
         questionImage: "./images/game/jumble.jpg",
-        info: "Fun factoid: Luke tried to propose at the beach at sunrise, but Janet got scared and ran away",
+        info: "Janet could not figure this out for hours",
         infoImage: "./images/game/jumble_i.jpg",
 	},
 	{
 		question: "Can you figure this out?",
-        answer: ["iloveyou", "I Love you"],
+        answer: [getValue("behoxrhn"), getValue("B Ehox Rhn")],
         questionImage: "./images/game/math.jpg",
-        info: "Fun factoid: Luke tried to propose at the beach at sunrise, but Janet got scared and ran away",
+        info: "I really do",
         infoImage: "./images/game/math_i.jpg",
 	},
 	{
 		question: "Find any groomsmen and he will tell you hint to next question.",
-        answer: ["Valley Brook", "Valley Brook Golf Course"],
-        questionImage: "./images/game/.jpg",
-        info: "Fun factoid: Luke tried to propose at the beach at sunrise, but Janet got scared and ran away",
-        infoImage: "./images/game/_i.jpg",
+        answer: [getValue("Ihixrxl")],
+        questionImage: "./images/game/groomsmen.jpg",
+        info: "Ask Luke about his homemade fried chicken and why he'll probably never make it again.",
+        infoImage: "./images/game/groomsmen_i.jpg",
+	},
+	{
+		question: "Tables: 2 3 4 5 6", 
+        answer: [getValue("FHETK")],
+        questionImage: "./images/game/final.jpg",
+        info: "I can't believe you finished the game",
+        infoImage: "./images/game/final_i.jpg",
 	},
 ]
 
@@ -117,7 +124,6 @@ const questions = [
 var $bool = false
 function answer() {
     var answer = $answerInput.val().toLowerCase().trim();
-	console.log(answer + "::" + questions[currentQuestion].answer);
 	var answer_array = [];
 	for (let i=0; i<questions[currentQuestion].answer.length; i++){
 		answer_array[i] = questions[currentQuestion].answer[i].trim().toLowerCase();
@@ -142,7 +148,7 @@ function answer() {
             $nextButton.show();
         });
     }
-    else if (answer == questions_list[currentQuestion].answer.toLowerCase() && currentQuestion >= 5) {
+    else if (answer == questions_list[currentQuestion].answer[0].toLowerCase() && currentQuestion >= 5) {
 		$bool = true;
 		var $target = $(".question");
 
@@ -192,7 +198,7 @@ function next() {
 
 
 }
-const finisher = "simcity200"
+const finisher = "Luke<3Jan"
 function showTrueEnd() {
     $endCode.text(finisher);
     var $target = $(".end");
@@ -216,6 +222,5 @@ function getValue(str) {
 		}
 		output += c;
 	}
-	console.log(output)
 	return output;
 };
